@@ -7,10 +7,10 @@ namespace ListApi.Models
     {
         public int Id { get; set; }
         public int quantity { get; set; }
-        public string observacao { get; set; }
-        public string imagePath { get; set; }
-        public string adicionais { get; set; }
-        public string menuId { get; set; }
+        public string? observacao { get; set; }
+        public string? imagePath { get; set; }
+        public string? adicionais { get; set; }
+        public string? menuId { get; set; }
 
         // Foreign key
         public int order_id { get; set; }

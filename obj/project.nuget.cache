@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AEjpl2wROzTDYbKoKCkOt2QS7S/wYQDX+oIJpZufnmBHrfUwqJ62nQXWKaJH4ta78g7g0zAXIM8hRoKD/WCtRA==",
+  "dgSpecHash": "sTekRSyqKeOr/XXMOlCQOF6LEODjJg96HxxG4NgUzC7qKzpljymLbYXhoWXzIKGFwxCX5oQJo1ZSeDK77PGepA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ghost\\Documents\\ListApi\\listApi\\ListApi.csproj",
+  "projectFilePath": "C:\\Users\\Ghost\\Documents\\ListApi\\ListApi\\ListApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ghost\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Ghost\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

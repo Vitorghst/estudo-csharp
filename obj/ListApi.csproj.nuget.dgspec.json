@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ghost\\Documents\\ListApi\\listApi\\ListApi.csproj": {}
+    "C:\\Users\\Ghost\\Documents\\ListApi\\ListApi\\ListApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ghost\\Documents\\ListApi\\listApi\\ListApi.csproj": {
+    "C:\\Users\\Ghost\\Documents\\ListApi\\ListApi\\ListApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ghost\\Documents\\ListApi\\listApi\\ListApi.csproj",
+        "projectUniqueName": "C:\\Users\\Ghost\\Documents\\ListApi\\ListApi\\ListApi.csproj",
         "projectName": "ListApi",
-        "projectPath": "C:\\Users\\Ghost\\Documents\\ListApi\\listApi\\ListApi.csproj",
+        "projectPath": "C:\\Users\\Ghost\\Documents\\ListApi\\ListApi\\ListApi.csproj",
         "packagesPath": "C:\\Users\\Ghost\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ghost\\Documents\\ListApi\\listApi\\obj\\",
+        "outputPath": "C:\\Users\\Ghost\\Documents\\ListApi\\ListApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ghost\\AppData\\Roaming\\NuGet\\NuGet.Config",
