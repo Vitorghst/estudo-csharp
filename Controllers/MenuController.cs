@@ -25,11 +25,25 @@ namespace MenuApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<MenuItem>> GetMenu()
+        public async Task<IActionResult> ListMenu()
         {
-            var menuItems = _menuService.getMenu();
+            var menuItems = await _menuService.GetMenuItemsAsync();
             return Ok(menuItems);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var editItem = _menuService.GetItemById(id);
+
+            if (editItem == null)
+            {
+                return NotFound($"Item com ID {id} não encontrado.");
+            }
+
+            return Ok(editItem);
+        }
+
 
         [HttpPost("AddItem")]
         public IActionResult Item(MenuItem credentials)
@@ -42,6 +56,27 @@ namespace MenuApi.Controllers
             _menuService.AddItem(credentials);
 
             return CreatedAtAction(nameof(Item), new { id = credentials.Id }, credentials);
+        }
+
+        [HttpPost]
+        [Route("upload")]
+        public async Task<IActionResult> Upload([FromForm] IFormFile image)
+        {
+            if (image == null || image.Length == 0)
+                return BadRequest("No file uploaded.");
+
+            var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+            var fileName = Path.GetFileName(image.FileName);
+
+            var filePath = Path.Combine(uploadPath, fileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await image.CopyToAsync(fileStream);
+            }
+
+            // Retorna o caminho da imagem salva para salvar no banco de dados
+            return Ok(new { ImagePath = $"/images/{fileName}" });
         }
 
         [HttpDelete("{id}")]

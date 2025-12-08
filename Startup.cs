@@ -15,7 +15,7 @@ namespace ListApi
                 options.AddPolicy("AllowReactApp",
                     builder =>
                     {
-                        builder.WithOrigins("http://192.168.100.66:5173")
+                        builder.WithOrigins("http://192.168.130.133:5173")
                                .AllowAnyHeader()
                                .AllowAnyMethod();
                                .AllowCredentials();
@@ -37,6 +37,8 @@ namespace ListApi
             }
 
             app.UseCors("AllowReactApp");
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 

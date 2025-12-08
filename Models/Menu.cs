@@ -6,8 +6,6 @@ namespace ListApi.Models
     {
         public int Id { get; set; }
         [Required]
-        public string? ImagePath { get; set; }
-        [Required]
         public string? Name { get; set; }
         [Required]
         public string? Description { get; set; }
@@ -15,5 +13,14 @@ namespace ListApi.Models
         public double Price { get; set; }
         [Required]
         public string? Category { get; set; }
+
+        public string? ImagePath { get; set; }
+         public string ImageName
+    { 
+        get 
+        { 
+            return Path.Combine("http://localhost:5110", ImagePath); 
+        } 
+    }
     }
 }

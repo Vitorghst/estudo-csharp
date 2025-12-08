@@ -1,5 +1,6 @@
 using ListApi.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 public class MenuService
 {
@@ -13,6 +14,26 @@ public class MenuService
     public List<MenuItem> getMenu()
     {
         return _context.MenuItems.ToList();
+    }
+
+    public List<Horario> getHorario()
+    {
+        return _context.Horarios.ToList();
+    }
+
+    public async Task<IEnumerable<object>> GetMenuItemsAsync()
+    {
+        var menuItems = await _context.MenuItems.Select(item => new
+        {   
+            item.Id,
+            item.Name,
+            item.Description,
+            item.Price,
+            item.Category,
+            ImagePath = item.ImagePath != null ? Path.Combine("http://localhost:5110", item.ImagePath) : null
+        }).ToListAsync();
+
+        return menuItems;
     }
 
     public void AddItem(MenuItem menuItem)
